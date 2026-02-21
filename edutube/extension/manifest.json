@@ -2,19 +2,12 @@
   "manifest_version": 3,
   "name": "EduTube",
   "version": "1.0.0",
-  "description": "EduTube learning journeys - sign in and access your dashboard from the browser side panel.",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
+  "description": "EduTube learning journeys - sign in and manage your journeys from the browser.",
   "action": {},
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "permissions": [
-    "sidePanel"
-  ],
+  "permissions": ["sidePanel", "storage"],
   "host_permissions": [
     "http://localhost:5173/*",
     "http://localhost:5000/*",
