@@ -1,0 +1,23 @@
+# FastAPI and server
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# MongoDB async driver (motor 3.6+ required for pymongo 4.9+)
+motor>=3.6.0
+pymongo>=4.10,<5
+
+# Auth and security
+python-jose[cryptography]==3.3.0
+bcrypt>=4.0,<5
+
+# Validation and env
+pydantic[email]==2.10.3
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+email-validator>=2.0.0
+
+# HTTP client for YouTube API
+httpx==0.28.0
+
+# Google Generative AI (Gemini)
+google-generativeai==0.8.3

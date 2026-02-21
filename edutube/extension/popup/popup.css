@@ -1,0 +1,53 @@
+/* Popup styling - compact and clear */
+body {
+  width: 280px;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tagline {
+  margin: 0 0 16px 0;
+  color: #666;
+  font-size: 12px;
+}
+
+.controls {
+  margin-bottom: 8px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: #0f0f0f;
+  cursor: pointer;
+}
+
+.slider {
+  font-weight: 500;
+}
+
+.hint {
+  margin: 0;
+  font-size: 11px;
+  color: #888;
+}

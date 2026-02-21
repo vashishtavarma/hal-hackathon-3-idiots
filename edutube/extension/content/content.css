@@ -1,0 +1,21 @@
+/**
+ * Content script styles for YouTube.
+ * Focus mode: hide secondary column, Shorts, and recommendations by default.
+ * Class .hal-focus-mode is toggled from content.js based on storage.
+ */
+
+/* Hide secondary column (recommendations, related) when focus mode is on */
+.hal-focus-mode #secondary {
+  display: none !important;
+}
+
+/* Hide Shorts shelf on home when focus mode is on */
+.hal-focus-mode ytd-rich-shelf-renderer[is-shorts],
+.hal-focus-mode [is-shorts] {
+  display: none !important;
+}
+
+/* Optional: hide full Shorts tab content when in focus mode */
+.hal-focus-mode ytd-rich-grid-renderer [is-shorts] {
+  display: none !important;
+}

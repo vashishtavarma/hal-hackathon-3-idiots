@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "HAL - YouTube Learning",
+  "version": "0.0.1",
+  "description": "Focus mode and learning tools for YouTube: notes, quizzes, less distractions.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.youtube.com/*", "http://localhost:8000/*"],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+}

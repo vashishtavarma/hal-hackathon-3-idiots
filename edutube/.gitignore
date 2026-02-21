@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+.env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+.envrc
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+.cache/
+
+# Build and output
+out/
+.next/
+nuxt/
+.nuxt/
+.output/
+*.tsbuildinfo
+
+# Testing and coverage
+coverage/
+.nyc_output/
+.pytest_cache/
+.coverage
+htmlcov/
+*.lcov
+
+# Misc
+*.bak
+*.orig
