@@ -3,25 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduTube - Sign in</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow: auto;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-    iframe {
-      display: block;
-      width: 100%;
-      min-height: 100%;
-      border: none;
-    }
-  </style>
+  <title>EduTube</title>
+  <link rel="stylesheet" href="sidepanel.css" />
 </head>
 <body>
-  <iframe id="app-frame" title="EduTube Sign in"></iframe>
+  <div class="app">
+    <!-- Auth view: login + link to sign up on landing page -->
+    <section id="auth-view" class="view">
+      <div class="auth-card">
+        <h1 class="brand">EduTube</h1>
+        <p class="brand-tagline">Your learning journeys</p>
+
+        <div id="login-form" class="form-panel">
+          <h2>Sign in</h2>
+          <form id="login-form-el">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required placeholder="you@example.com" autocomplete="email" />
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required placeholder="••••••••" autocomplete="current-password" />
+            <p id="auth-error" class="error-msg" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary" id="login-btn">Sign in</button>
+          </form>
+          <p class="auth-switch">
+            Don't have an account? <a href="http://localhost:5173/land" target="_blank" rel="noopener" id="signup-link">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard: Hi Name, journeys list, create journey, delete per journey -->
+    <section id="dashboard-view" class="view hidden">
+      <header class="header">
+        <p class="greeting" id="greeting">Hi, <span id="user-name">User</span></p>
+        <div class="header-actions">
+          <a href="http://localhost:5173/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" id="learn-link">Learn</a>
+          <button type="button" class="btn btn-ghost btn-icon" id="logout-btn" title="Sign out">Sign out</button>
+        </div>
+      </header>
+      <div class="section-head">
+        <h2>My journeys</h2>
+        <button type="button" class="btn btn-primary btn-sm" id="create-journey-btn">Create journey</button>
+      </div>
+      <div id="journeys-list" class="scroll-list" role="list">
+        <!-- Journey cards injected by JS -->
+      </div>
+      <p id="journeys-empty" class="empty-state hidden">No journeys yet. Create one to get started.</p>
+    </section>
+
+    <!-- Journey detail: back, videos list with scroll, add video, delete per video -->
+    <section id="journey-view" class="view hidden">
+      <header class="header">
+        <button type="button" class="btn btn-ghost btn-back" id="back-to-dashboard">← Back</button>
+        <h2 class="journey-title" id="journey-view-title">Journey</h2>
+      </header>
+      <div class="section-head">
+        <span class="section-label">Videos</span>
+        <button type="button" class="btn btn-primary btn-sm" id="add-video-btn">Add video</button>
+      </div>
+      <div id="videos-list" class="scroll-list" role="list">
+        <!-- Video (chapter) cards injected by JS -->
+      </div>
+      <p id="videos-empty" class="empty-state hidden">No videos yet. Add a video to this journey.</p>
+    </section>
+  </div>
+
+  <!-- Create journey modal -->
+  <dialog id="create-journey-modal" class="modal">
+    <form method="dialog" id="create-journey-form">
+      <h3>New journey</h3>
+      <label for="new-journey-title">Title</label>
+      <input type="text" id="new-journey-title" placeholder="e.g. React basics" />
+      <label for="new-journey-desc">Description (optional)</label>
+      <textarea id="new-journey-desc" rows="2" placeholder="Short description"></textarea>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancel-create-journey">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Add video modal -->
+  <dialog id="add-video-modal" class="modal">
+    <form method="dialog" id="add-video-form">
+      <h3>Add video</h3>
+      <label for="new-video-title">Title</label>
+      <input type="text" id="new-video-title" required placeholder="Video title" />
+      <label for="new-video-url">Video URL</label>
+      <input type="url" id="new-video-url" required placeholder="https://www.youtube.com/watch?v=..." />
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancel-add-video">Cancel</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+  </dialog>
+
   <script src="sidepanel.js"></script>
 </body>
 </html>
