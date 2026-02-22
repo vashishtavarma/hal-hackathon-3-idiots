@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { createNote, getNotesByChapter, updateNote } from "../../Api/notes";
+import { createNote, getNotesByChapter, updateNote } from "../../api/notes";
 import { AlertModal } from "../../components/ui/alert-modal";
 
 const modules = {

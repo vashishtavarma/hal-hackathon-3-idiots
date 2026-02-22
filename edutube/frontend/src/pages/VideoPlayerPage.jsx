@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import YouTubeApp from "../components/YoutubeApp.jsx";
 import AddNotes from "../components/forms/AddNotes";
 import { useParams } from "react-router-dom";
-import { getChaptersById } from "../Api/chapters.js";
+import { getChaptersById } from "../api/chapters.js";
 import { extractVideoId } from "../Constants/index.js";
 
 const VideoPlayerPage = () => {

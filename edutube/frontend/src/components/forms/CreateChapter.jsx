@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import { createChapter } from '../../Api/chapters'
+import { createChapter } from '../../api/chapters'
 
 const CreateChapter = ({open,setOpen,journeyId}) => {
 

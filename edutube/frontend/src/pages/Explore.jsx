@@ -10,7 +10,7 @@ const IconNotes = ({ className }) => (
 );
 import { Link, useNavigate } from 'react-router-dom';
 import { fetchPublicJourneys, forkJourney } from '../api/journeys';
-import { getUserProfile } from '../Api';
+import { getUserProfile } from '../api';
 import { AlertModal } from '../components/ui/alert-modal';
 
 const Explore = () => {

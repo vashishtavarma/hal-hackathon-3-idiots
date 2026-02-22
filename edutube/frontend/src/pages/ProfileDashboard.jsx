@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import JourneyPieChart from "../components/Dashboard/JourneyPieChart";
 import { calculateProgress } from "../Constants";
-import { getUserProfile } from "../Api";
-import { getAllJourneys } from "../Api/journeys";
-import { getChaptersByJourneyId } from "../Api/chapters";
+import { getUserProfile } from "../api";
+import { getAllJourneys } from "../api/journeys";
+import { getChaptersByJourneyId } from "../api/chapters";
 
 const ProfileDashboard = () => {
   const [user, setUser] = useState(null);

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
-import { updateChapter } from '../../Api/chapters'
+import { updateChapter } from '../../api/chapters'
 
 const EditChapter = ({openEdit,setOpenEdit, chapterId, chDetails}) => {
     const open  = openEdit;

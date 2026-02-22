@@ -5,12 +5,12 @@ import CreateChapter from "../components/forms/CreateChapter";
 import AddNotes from "../components/forms/AddNotes";
 import EditChapter from "../components/forms/EditChapter";
 import VideoPlayer from "../components/VideoPlayer";
-import { getJourneyById } from "../Api/journeys";
+import { getJourneyById } from "../api/journeys";
 import {
   deleteChapter,
   getChaptersByJourneyId,
   updateChapterComplete,
-} from "../Api/chapters";
+} from "../api/chapters";
 import { RainbowButton } from "../components/ui/rainbow-button";
 import { ConfirmDialog } from "../components/ui/confirm-dialog";
 

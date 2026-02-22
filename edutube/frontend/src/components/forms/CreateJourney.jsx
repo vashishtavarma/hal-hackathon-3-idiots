@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
-import { createJourney, createJourneyWithPlaylist, getAllJourneys } from "../../Api/journeys";
+import { createJourney, createJourneyWithPlaylist, getAllJourneys } from "../../api/journeys";
 import { useNavigate } from "react-router-dom";
 import { extractPlaylistId } from "../../Constants";
 import { RainbowButton } from "../../components/ui/rainbow-button";

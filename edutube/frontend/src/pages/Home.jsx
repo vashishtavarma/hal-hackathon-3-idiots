@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CreateJourney from "../components/forms/CreateJourney";
-import { deleteJourney, getAllJourneys } from "../Api/journeys";
-import { getUserProfile } from "../Api";
+import { deleteJourney, getAllJourneys } from "../api/journeys";
+import { getUserProfile } from "../api";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ConfirmDialog } from "@/components/ui/confirm-dialog";
 

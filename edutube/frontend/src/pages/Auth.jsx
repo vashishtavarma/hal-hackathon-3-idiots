@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import EduTubeLogo from "../components/EduTubeLogo";
-import { loginUser, registerUser } from "../Api";
+import { loginUser, registerUser } from "../api";
 import { RippleButton } from "@/components/ui/ripple-button";
 import { ShineBorder } from "@/components/ui/shine-border";
 import {
