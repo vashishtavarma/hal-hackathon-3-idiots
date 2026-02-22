@@ -59,7 +59,7 @@ async def create_journey_from_playlist(
     jid = await create_journey(
         title=title,
         description=description,
-        is_public=True,
+        is_public=body.is_public,
         user_id=user_id,
     )
     videos = await get_playlist_videos(playlist_id)

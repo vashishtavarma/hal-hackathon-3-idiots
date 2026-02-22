@@ -37,7 +37,7 @@ class TokenResponse(BaseModel):
 class JourneyCreate(BaseModel):
     title: str | None = "Untitled Journey"
     description: str | None = ""
-    is_public: bool = True
+    is_public: bool = False
 
 
 class JourneyUpdate(BaseModel):
@@ -62,6 +62,7 @@ class JourneyCreateResponse(BaseModel):
 
 class PlaylistCreate(BaseModel):
     playlistId: str = Field(..., alias="playlistId")
+    is_public: bool = False
 
     model_config = {"populate_by_name": True}
 
