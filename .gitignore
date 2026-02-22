@@ -1,0 +1,8 @@
+# Playwright MCP logs and output (do not commit)
+.playwright-mcp/
+
+# OS and IDE (root-level)
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
