@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { getNotesByJourney, getNotesByChapter } from '../Api/notes';
-import { getJourneyById } from '../Api/journeys';
-import { getChaptersByJourneyId } from '../Api/chapters';
+import { getNotesByJourney, getNotesByChapter } from '../api/notes';
+import { getJourneyById } from '../api/journeys';
+import { getChaptersByJourneyId } from '../api/chapters';
+import { AlertModal } from '../components/ui/alert-modal';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -43,6 +44,7 @@ const Notes = () => {
   const [jData, setJData] = useState({});
   const [chapterTitle, setChapterTitle] = useState(null);
   const [error, setError] = useState(null);
+  const [pdfError, setPdfError] = useState(null);
 
   const fetchNotes = async () => {
     if (!journeyId) return;
@@ -112,7 +114,7 @@ const Notes = () => {
       })
       .catch((err) => {
         console.error('PDF export failed:', err);
-        alert('Could not generate PDF. Please try again.');
+        setPdfError('Could not generate PDF. Please try again.');
       });
   };
 
@@ -230,6 +232,14 @@ const Notes = () => {
           </div>
         </div>
       </section>
+
+      <AlertModal
+        open={!!pdfError}
+        onClose={() => setPdfError(null)}
+        title="PDF export failed"
+        message={pdfError || ''}
+        buttonLabel="OK"
+      />
     </div>
   );
 };

@@ -11,15 +11,15 @@ import { cn } from "@/lib/utils";
 export function AlertModal({ open, onClose, title = "Success", message, buttonLabel = "OK" }) {
   return (
     <Dialog open={open} onClose={onClose} className="relative z-[100]">
-      <DialogBackdrop className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
-      <div className="fixed inset-0 flex items-center justify-center p-4">
+      <DialogBackdrop className="fixed inset-0 bg-black/50 backdrop-blur-sm" aria-hidden />
+      <div className="fixed inset-0 flex items-center justify-center p-4" role="alertdialog" aria-modal="true" aria-labelledby="alert-modal-title" data-testid="alert-modal-centered">
         <DialogPanel
           className={cn(
             "relative w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-xl text-card-foreground",
             "focus:outline-none focus:ring-0"
           )}
         >
-          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+          <h3 id="alert-modal-title" className="text-lg font-semibold text-foreground">{title}</h3>
           <p className="mt-2 text-sm text-muted-foreground">{message}</p>
           <div className="mt-6 flex justify-end">
             <button

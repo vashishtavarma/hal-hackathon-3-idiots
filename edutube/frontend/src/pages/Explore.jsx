@@ -9,14 +9,16 @@ const IconNotes = ({ className }) => (
   </svg>
 );
 import { Link, useNavigate } from 'react-router-dom';
-import { fetchPublicJourneys, forkJourney } from '../Api/journeys';
+import { fetchPublicJourneys, forkJourney } from '../api/journeys';
 import { getUserProfile } from '../Api';
+import { AlertModal } from '../components/ui/alert-modal';
 
 const Explore = () => {
   const [journeys, setJourneys] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState(null);
   const [user, setUser] = useState({});
+  const [alertState, setAlertState] = useState({ open: false, title: '', message: '' });
 
   const loadPublicJourneys = async () => {
     try {
@@ -32,12 +34,26 @@ const Explore = () => {
   const handleFork = async (journeyId) => {
     try {
       const { journeyId: newJourneyId } = await forkJourney(journeyId);
-      alert('Journey forked successfully! with id ', newJourneyId);
-        navigate('/')
-    } catch (error) {
-      console.error(error);
-      alert('Failed to fork the journey');
+      setAlertState({
+        open: true,
+        title: 'Forked',
+        message: `Journey forked successfully. ID: ${newJourneyId}`,
+      });
+    } catch (err) {
+      console.error(err);
+      setAlertState({
+        open: true,
+        title: 'Fork failed',
+        message: 'Failed to fork the journey. Please try again.',
+      });
     }
+  };
+
+  const closeAlert = () => {
+    setAlertState((s) => {
+      if (s.title === 'Forked') setTimeout(() => navigate('/'), 0);
+      return { ...s, open: false };
+    });
   };
 
   useEffect(() => {
@@ -160,6 +176,14 @@ const Explore = () => {
           </div>
         </div>
       </div>
+
+      <AlertModal
+        open={alertState.open}
+        onClose={closeAlert}
+        title={alertState.title}
+        message={alertState.message}
+        buttonLabel="OK"
+      />
     </section>
   );
 };
