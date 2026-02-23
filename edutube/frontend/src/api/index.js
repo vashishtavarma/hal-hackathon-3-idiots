@@ -1,5 +1,5 @@
 // API base: HTTPS only; port 443 when required (default for HTTPS).
-const API_BASE = "https://65.1.133.54";
+const API_BASE = "https://d69mtih07yogo.cloudfront.net";
 export const apiurl = `${API_BASE}/api/v1`;
 
 export const registerUser = async (userData) => {
