@@ -1,5 +1,5 @@
-// Use HTTPS when frontend is on HTTPS (e.g. Amplify). See backend/HTTPS_CloudFront.md.
-const API_BASE = "http://65.1.133.54:443";
+// HTTPS required when frontend is on HTTPS (e.g. Amplify). See backend/HTTPS_CloudFront.md.
+const API_BASE = "https://65.1.133.54";
 export const apiurl = `${API_BASE}/api/v1`;
 
 export const registerUser = async (userData) => {
